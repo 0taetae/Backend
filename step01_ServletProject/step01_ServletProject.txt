@@ -1,0 +1,64 @@
+step01_ServletProject   -- Dynamic Web Project
+                           Dynamic Web Module Version: 2.5
+                           Context root: edu
+                           Content directory: src/main/webapp
+                           Generate web.xml deployment descriptor(체크)
+                           
+    src/main/java   -- class, servlet 파일
+       com.ssafy.edu
+	       HelloServlet.java   -- servlet  / doGet()
+	       NextServlet.java    -- servlet  / doGet()
+      
+      
+    webapp  -- html, css, javascript,jsp, 이미지파일...
+     
+       
+       
+http://localhost:8080/edu/HelloServlet       
+
+
+==> http://localhost:8080/edu/hello.do
+    http://localhost:8080/edu/next.do
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

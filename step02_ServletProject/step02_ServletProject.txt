@@ -1,0 +1,19 @@
+step02_ServletProject  --Dynamic Web Project
+		                  Dynamic Web Module Version: 6.0
+		                  Context root: edu
+		                  Content directory: src/main/webapp
+		                  Generate web.xml deployment descriptor(체크안함)
+    src/main/java
+           com.ssafy.edu
+                HelloServlet.java  --servlet / doGet()
+                NextServlet.java   --servlet / doGet()	
+           com.ssafy.method
+                GetServlet.java    --servlet /name:GET,  urlpattern:/get.do  / doGet()   
+                PostServlet.java   --servlet /name:POST,  urlpattern:/post.do  / doPost()   
+                PostServlet2.java  --servlet /name:POST2,  urlpattern:/post2.do  / doPost()   
+            	    
+    webapp
+        exam  --폴더           
+            getTest.html
+            postTest.html
+            postTest2.html
