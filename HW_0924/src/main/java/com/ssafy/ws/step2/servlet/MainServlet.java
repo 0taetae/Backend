@@ -1,5 +1,6 @@
 package com.ssafy.ws.step2.servlet;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -37,17 +38,13 @@ public class MainServlet extends HttpServlet {
 		String genre = request.getParameter("genre");
 		int runningTime = Integer.parseInt(request.getParameter("runningTime"));
 		
-		Movie movie = new Movie(id++, title, director, genre, runningTime);
+		request.setAttribute("title", title);
+		request.setAttribute("director", director);
+		request.setAttribute("genre", genre);
+		request.setAttribute("runningTime", runningTime);
 		 
-		StringBuilder output = new StringBuilder();
-		
-		output.append("<html><body>")
-			.append("<h1>영화 정보</h1>")
-			.append(movie.toString())
-			.append("</body></html>");
-		
-		response.setContentType("text/html; charset=UTF-8");
-		response.getWriter().write(output.toString());
+		RequestDispatcher disp = request.getRequestDispatcher("/regist_result.jsp");
+		disp.forward(request,response);
 		
 	}	
 
