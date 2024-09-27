@@ -1,17 +1,17 @@
 package com.ssafy.sample.dto;
 
-public class Movie {
+public class MovieDTO {
 	private String code;
 	private String title;
 	private int time;
 	private String director;
 	private String genre;
 	
-	public Movie() {
+	public MovieDTO() {
 		
 	}
 	
-	public Movie(String code, String title, int time, String director, String genre) {
+	public MovieDTO(String code, String title, int time, String director, String genre) {
 		super();
 		this.code = code;
 		this.title = title;
@@ -60,11 +60,11 @@ public class Movie {
 		this.genre = genre;
 	}
 
-	@Override
-	public String toString() {
-		return "MovieDto [code=" + code + ", title=" + title + ", time=" + time + ", director=" + director + ", genre="
-				+ genre + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "MovieDto [code=" + code + ", title=" + title + ", time=" + time + ", director=" + director + ", genre="
+//				+ genre + "]";
+//	}
 	
 	
 	

@@ -29,7 +29,7 @@ public class LoginDaoImpl implements LoginDao{
 		ResultSet rs = null;  // SQL 조회 결과 저장
 		
 		try {
-			String sql = "select * from users where id=? and pwd=?";
+			String sql = "select * from member where userid=? and userpwd=?";
 			conn = DBUtil.getInstance().getConnection();  // DB 연결
 			pstmt = conn.prepareStatement(sql);  // SQL 쿼리 준비
 			pstmt.setString(1, id);
@@ -39,10 +39,8 @@ public class LoginDaoImpl implements LoginDao{
 			// 결과 존재할 경우 DTO에 값 설정
 			if(rs.next()) {
 				dto = new LoginDTO();  // DTO 객체 생성
-				dto.setId(rs.getString("id"));  // 조회된 사용자 ID 설정
-				dto.setPwd(rs.getString("pwd"));
-				dto.setName(rs.getString("name"));
-				dto.setPoint(rs.getDouble("point"));
+				dto.setId(rs.getString("userid"));  // 조회된 사용자 ID 설정
+				dto.setPwd(rs.getString("userpwd"));
 			}
 			
 		}catch(SQLException e) {

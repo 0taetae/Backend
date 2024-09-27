@@ -27,15 +27,16 @@ public class BookDaoImpl implements BookDao{
 	public int insertBook(BookDTO book) {
 		
 		// 책 정보를 emp 테이블에 삽입하는 SQL 쿼리
-		String sql = "insert into book(isbn, title, author, company, price) values(isbn,?,?,?,?)";
+		String sql = "insert into bookshop(isbn, title, author, company, price) values(?,?,?,?,?)";
 		
 		try(Connection conn = DBUtil.getInstance().getConnection(); 
 				PreparedStatement pstmt = conn.prepareStatement(sql)){
 			
-			pstmt.setString(1, book.getTitle());
-			pstmt.setString(2, book.getAuthor());
-			pstmt.setString(3, book.getCompany());
-			pstmt.setInt(4, book.getPrice());
+			pstmt.setString(1, book.getIsbn());
+			pstmt.setString(2, book.getTitle());
+			pstmt.setString(3, book.getAuthor());
+			pstmt.setString(4, book.getCompany());
+			pstmt.setInt(5, book.getPrice());
 			
 			return pstmt.executeUpdate();  // 쿼리 실행 및 결과 반환
 			
@@ -49,7 +50,7 @@ public class BookDaoImpl implements BookDao{
 	@Override
 	public List<BookDTO> listbook() {
 		List<BookDTO> list = new ArrayList();  // 책 정보를 저장할 리스트
-		String sql = "select * from book order by isbn desc";  // 내림차순으로 책 조회
+		String sql = "select * from bookshop order by isbn desc";  // 내림차순으로 책 조회
 		BookDTO dto = null;  // 책 정보를 담을 DTO 객체
 		
 		try(Connection conn = DBUtil.getInstance().getConnection();
@@ -77,12 +78,13 @@ public class BookDaoImpl implements BookDao{
 
 	@Override
 	public int updateBook(BookDTO book) {
-		String sql = "update book set price=?";
+		String sql = "update bookshop set price=? where isbn=?";
 		
 		try(Connection conn = DBUtil.getInstance().getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)){
 			
 			pstmt.setInt(1, book.getPrice());
+			pstmt.setString(2, book.getIsbn());
 			
 			return pstmt.executeUpdate();
 			
@@ -96,11 +98,12 @@ public class BookDaoImpl implements BookDao{
 	@Override
 	public int deleteBook(BookDTO book) {
 		
-		String sql = "delete from book where isbn=?";
+		String sql = "delete from bookshop where isbn=?";
 		
 		try(Connection conn = DBUtil.getInstance().getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)){
 			pstmt.setString(1, book.getIsbn());
+			
 			
 			return pstmt.executeUpdate();
 		}catch(SQLException e) {

@@ -8,9 +8,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class MovieController
- */
 @WebServlet("/movie")
 public class MovieController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

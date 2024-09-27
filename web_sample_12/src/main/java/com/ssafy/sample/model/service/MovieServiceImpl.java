@@ -3,24 +3,24 @@ package com.ssafy.sample.model.service;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.ssafy.sample.dto.Movie;
+import com.ssafy.sample.dto.MovieDTO;
 
 public class MovieServiceImpl implements MovieService {
 
 	@Override
-	public List<Movie> selectAll() throws SQLException {
+	public List<MovieDTO> selectAll() throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Movie selectByCode(String code) throws SQLException {
+	public MovieDTO selectByCode(String code) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int insert(Movie movie) throws SQLException {
+	public int insert(MovieDTO movie) throws SQLException {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -32,7 +32,7 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
-	public int update(Movie movie) throws SQLException {
+	public int update(MovieDTO movie) throws SQLException {
 		// TODO Auto-generated method stub
 		return 0;
 	}

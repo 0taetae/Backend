@@ -1,26 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<form action="" method="post">
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<c:import url="../menu.jsp"/>
+<fmt:requestEncoding value="UTF-8"/>
+<form action="${root }/main" method="post">
+<input type="hidden" name="action" value="updatebook">
 <table border="0" width="300" align="center">
 	<tr>
 		<td>도서코드</td>
-		<td><input type="text" name="isbn" value="" readonly></td>
+		<td><input type="text" name="isbn" value="${param.isbn }" readonly></td>
 	</tr>
 	<tr>
 		<td>책이름</td>
-		<td><input type="text" name="title" value="" readonly></td>
+		<td><input type="text" name="title" value="${param.title }" readonly></td>
 	</tr>
 	<tr>
 		<td>저자</td>
-		<td><input type="text" name="author" value="" readonly></td>
+		<td><input type="text" name="author" value="${param.author }" readonly></td>
 	</tr>
 	<tr>
 		<td>출판사</td>
-		<td><input type="text" name="company" value="" readonly></td>
+		<td><input type="text" name="company" value="${param.company }" readonly></td>
 	</tr>
 	<tr>
 		<td>가격</td>
-		<td><input type="text" name="price" value=""></td>
+		<td><input type="text" name="price" value="${param.price }"></td>
 	</tr>
 	<tr>
 		<td colspan="2" align="center">

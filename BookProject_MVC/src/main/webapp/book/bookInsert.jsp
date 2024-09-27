@@ -1,6 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    
-<form action="" method="post">
+<%@ page language="java" contentType="text/html; charset=UTF-8"   pageEncoding="UTF-8"%>
+
+<!-- JSTL core 태그 라이브러리 선언 -->
+<%@ taglib prefix="c" uri="jakarta.tags.core" %> 
+<c:import url="../menu.jsp"/>
+
+<!-- 서버로 요청을 보낼 URL 설정, POST 방식 -->
+<form action="${root }/main" method="post">
+
+<!-- 서버에 "insertbook" action을 전송하여 책 추가 요청 -->
+<input type="hidden" name="action" value="insertbook"/>
 <table border="0" width="300" align="center">
 	<tr>
 		<td>도서코드</td>
